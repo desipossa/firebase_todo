@@ -11,7 +11,7 @@ const App = () => {
 
     //firebase db에서 읽어오기
 
-    const getdb = async () => {
+    const getdb = () => {
         onSnapshot(q_, (snapshot) => {
             setList(snapshot.docs.map(doc => ({
                 id: doc.id,

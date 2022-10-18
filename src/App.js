@@ -49,11 +49,11 @@ const App = () => {
     }
 
     const updateHandler = (id) => {
-        updateDoc(doc(db, 'todo', id), input);
+        updateDoc(doc(db, 'todo', id), { ...input, timestamp: serverTimestamp() });
     }
     return (
         <div>
-            <h1>짜잔...</h1>
+            <h1>짜잔... {list.length}</h1>
             <form onSubmit={addHandler}>
                 <input name='name' value={input.name || ''} onChange={inputHandler} />
                 <input name='title' value={input.title || ''} onChange={inputHandler} />
